@@ -77,6 +77,23 @@ Explain Generative AI in simple terms.
 ```
 Generative AI is like a creative assistant that learns patterns from existing data and uses them to generate new content such as text, images, or code...
 ```
+## 🚨 Troubleshooting
+
+### Installation issues
+
+If you encounter errors while installing dependencies (such as `tiktoken` requiring a Rust compiler), first upgrade `pip`, `setuptools`, and `wheel`:
+
+```bash
+python -m pip install --upgrade pip setuptools wheel
+```
+
+Then reinstall the dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+If the issue persists, ensure you are using a supported Python version (Python 3.10–3.12) and an up-to-date version of `pip`.
 
 ## 📄 License
 
