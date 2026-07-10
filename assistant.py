@@ -3,6 +3,8 @@ from google import genai
 from dotenv import load_dotenv
 from google.genai import types
 
+import gradio as gr
+
 load_dotenv()
 
 api_key = os.getenv("GENAI_API_KEY")
@@ -31,8 +33,24 @@ def study_assistant(user_question, persona):
     )
     return response.text
 
+
+demo=gr.Interface(
+    fn = study_assistant,
+    inputs=[
+        gr.Textbox(lines=4, placeholder="Enter your question here...", label="Question"),
+        gr.Radio(choices=list(personalities.keys()), label="Personality", value="Friendly")
+    ],
+
+    outputs=gr.Textbox(lines=10, label="Response"),
+    title="AI-Powered Study Assistant",
+    description="Ask any question and get a detailed, beginner-friendly explanation from your AI Study Assistant. Choose between a Friendly or Academic personality for the response."
+    )
+
+demo.launch(debug=True)
+
 user_question = "Explain Generative AI in simple terms ."
 personality= "Academic"
 
 output = study_assistant(user_question, personality)
 print(output)
+
