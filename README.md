@@ -8,7 +8,6 @@ An AI-powered Study Assistant built with **Python**, **Gradio**, and **Google Ge
   <img src="assets/ss.png" alt="Gradio UI" width="900"/>
 </p>
 
-> Replace `screenshots/gradio-ui.png` with your screenshot after creating the `screenshots` folder.
 
 ## ✨ Features
 
