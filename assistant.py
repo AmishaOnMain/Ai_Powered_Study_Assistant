@@ -46,11 +46,9 @@ demo=gr.Interface(
     description="Ask any question and get a detailed, beginner-friendly explanation from your AI Study Assistant. Choose between a Friendly or Academic personality for the response."
     )
 
-demo.launch(debug=True)
+if __name__ == "__main__":
+    demo.launch(share=True)
 
-user_question = "Explain Generative AI in simple terms ."
-personality= "Academic"
 
-output = study_assistant(user_question, personality)
-print(output)
+
 
